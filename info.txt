@@ -1,8 +1,8 @@
 future: https://www.youtube.com/watch?v=K8YELRmUb5o&ab_channel=EdRoh
 
 following: https://www.youtube.com/watch?v=0cPCMIuDk2I&ab_channel=EdRoh
-seen: 
+seen: 1.1.53
 
-Q1: does the spelling of reducer in store and slice effected ? ==> inside slice spalling is not effected(reducer/reducers) but when exporting spelling must be 'reducer' and in store spelling mustbe 'reducer'
+Q1: does the spelling of reducer in store and slice effect ? ==> inside slice spalling should be 'reducers' but when exporting spelling must be 'reducer' and in store spelling mustbe 'reducer'
 Q2: change the reducer name in store and slice ==> slice name is not dependent on useSelector().'
 
