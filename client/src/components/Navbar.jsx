@@ -5,14 +5,16 @@ import {
   IconButton,
   InputBase,
 } from "@mui/material";
+
 import {
   LightModeOutlined,
   DarkModeOutlined,
-  Menu,
+  Menu as MenuIcon,
   Search,
   SettingsOutlined,
   ArrowDropDownOutlined,
 } from "@mui/icons-material";
+
 import React from "react";
 import { useDispatch } from "react-redux";
 
@@ -25,12 +27,12 @@ function Navbar() {
   const dispatch = useDispatch();
 
   return (
-    <AppBar sx={{ position: "sticky", background: "none" }}>
+    <AppBar sx={{ position: "static", background: "none", boxShadow: "none", }}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* LEFT SIDE */}
         <FlexBetween>
           <IconButton onClick={() => console.log("open/close sidebar")}>
-            <Menu />
+            <MenuIcon />
           </IconButton>
           <FlexBetween
             backgroundColor={theme.palette.background.alt}
