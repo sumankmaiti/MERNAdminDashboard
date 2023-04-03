@@ -22,7 +22,7 @@ import FlexBetween from "./FlexBetween";
 import profileImage from "assets/profile.jpg";
 import { setMode } from "state";
 
-function Navbar() {
+function Navbar({isSidebarOpen, setIsSidebarOpen}) {
   const theme = useTheme();
   const dispatch = useDispatch();
 
@@ -31,7 +31,7 @@ function Navbar() {
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* LEFT SIDE */}
         <FlexBetween>
-          <IconButton onClick={() => console.log("open/close sidebar")}>
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
           <FlexBetween
