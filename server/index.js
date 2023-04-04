@@ -7,10 +7,14 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 
 /* IMPORT ROUTES */
-import clientRoutes from './routes/client.js'
-import generalRoutes from './routes/general.js'
-import managementRoutes from './routes/management.js'
-import salesRoutes from './routes/sales.js'
+// import clientRoutes from './routes/client.js'
+// import generalRoutes from './routes/general.js'
+// import managementRoutes from './routes/management.js'
+// import salesRoutes from './routes/sales.js'
+
+// IMPORT MODEL AND DATA
+import User from './models/Users.js'
+import { dataUser } from './data/index.js'
 
 /* CONFIGURATION */
 dotenv.config()
@@ -24,13 +28,15 @@ app.use(bodyParser.urlencoded({ extended:false }))
 app.use(cors())
 
 /* ROUTES */
-app.use("/client", clientRoutes)
-app.use("/general", generalRoutes)
-app.use("/management", managementRoutes)
-app.use("/sales", salesRoutes)
+// app.use("/client", clientRoutes)
+// app.use("/general", generalRoutes)
+// app.use("/management", managementRoutes)
+// app.use("/sales", salesRoutes)
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 5000
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-.then(() => console.log('Server is running on port: ', PORT))
+.then(() => {
+	User.insertMany(dataUser)
+	console.log('Server is running on port: ', PORT)})
 .catch((error) => console.log('Did not connect: ', error))
