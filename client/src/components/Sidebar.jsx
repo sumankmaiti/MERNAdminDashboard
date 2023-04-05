@@ -95,6 +95,7 @@ const navItems = [
 ];
 
 function Sidebar({
+  user,
   isNonMobile,
   drawerWidth,
   isSidebarOpen,
@@ -189,13 +190,27 @@ function Sidebar({
                       </ListItemIcon>
                       <ListItemText primary={text} />
                       {active === lcText && (
-                        <ChevronRightOutlined sx={{ml: "auto"}} />
+                        <ChevronRightOutlined sx={{ ml: "auto" }} />
                       )}
                     </ListItemButton>
                   </ListItem>
                 );
               })}
             </List>
+          </Box>
+          <Box position="absolute" bottom="2rem">
+            <Divider />
+            <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
+              <Box
+                component="img"
+                alt="profile"
+                src={profileImage}
+                height="40px"
+                width="40px"
+                borderRadius="50%"
+                sx={{ objectFit: "cover" }}
+              />
+            </FlexBetween>
           </Box>
         </Drawer>
       )}
