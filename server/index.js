@@ -8,7 +8,7 @@ import morgan from 'morgan'
 
 /* IMPORT ROUTES */
 // import clientRoutes from './routes/client.js'
-// import generalRoutes from './routes/general.js'
+import generalRoutes from './routes/general.js'
 // import managementRoutes from './routes/management.js'
 // import salesRoutes from './routes/sales.js'
 
@@ -29,7 +29,7 @@ app.use(cors())
 
 /* ROUTES */
 // app.use("/client", clientRoutes)
-// app.use("/general", generalRoutes)
+app.use("/general", generalRoutes)
 // app.use("/management", managementRoutes)
 // app.use("/sales", salesRoutes)
 
@@ -37,6 +37,6 @@ app.use(cors())
 const PORT = process.env.PORT || 5000
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
-	User.insertMany(dataUser)
-	console.log('Server is running on port: ', PORT)})
+	// User.insertMany(dataUser)
+	app.listen(PORT, () => console.log('Server is running on port: ', PORT))})
 .catch((error) => console.log('Did not connect: ', error))

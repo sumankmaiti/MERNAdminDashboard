@@ -114,7 +114,7 @@ function Sidebar({
       {isSidebarOpen && (
         <Drawer
           open={isSidebarOpen}
-          onclose={() => setIsSidebarOpen(false)}
+          onClose={() => setIsSidebarOpen(false)}
           variant="persistent"
           anchor="left"
           sx={{

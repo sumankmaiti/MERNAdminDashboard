@@ -4,6 +4,7 @@ const initialState = {
 	mode: 'light',
 	userId: '63701cc1f03239b7f700000e'
 }
+
 const globalSlice = createSlice({
 	name: 'global',
 	initialState,
